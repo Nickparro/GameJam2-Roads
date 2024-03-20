@@ -60,4 +60,11 @@ public class PlayerMovement : MonoBehaviour
             //staminaBar.value = currentStamina;
         }
     }
+
+    private void OnTriggerEnter(Collider other) {
+        if (other.tag == "DialogTrigger") {
+            DialogManager.instance.HandleShowDialog(other.name);
+            Destroy(other);
+        }
+    }
 }
