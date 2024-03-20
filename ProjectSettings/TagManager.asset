@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Dialog
   - DialogTrigger
+  - Tool
   layers:
   - Default
   - TransparentFX
