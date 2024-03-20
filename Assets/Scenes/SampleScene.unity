@@ -136,7 +136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 250438655133328723, guid: 2e6d520cc44bfc84293b8619cbdb2a70, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 593.3354
+      value: -171
       objectReference: {fileID: 0}
     - target: {fileID: 250438655133328723, guid: 2e6d520cc44bfc84293b8619cbdb2a70, type: 3}
       propertyPath: m_LocalPosition.y
@@ -144,7 +144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 250438655133328723, guid: 2e6d520cc44bfc84293b8619cbdb2a70, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 256.34387
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 250438655133328723, guid: 2e6d520cc44bfc84293b8619cbdb2a70, type: 3}
       propertyPath: m_LocalRotation.w
@@ -177,6 +177,10 @@ PrefabInstance:
     - target: {fileID: 250438655133328734, guid: 2e6d520cc44bfc84293b8619cbdb2a70, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 250438655133328735, guid: 2e6d520cc44bfc84293b8619cbdb2a70, type: 3}
+      propertyPath: speed
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e6d520cc44bfc84293b8619cbdb2a70, type: 3}
@@ -263,12 +267,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1622660614, guid: f77534317f8963446b5d651f4ad8048f, type: 3}
+      propertyPath: m_Size.y
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 1622660614, guid: f77534317f8963446b5d651f4ad8048f, type: 3}
       propertyPath: m_Size.z
-      value: 1.07
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: 1622660614, guid: f77534317f8963446b5d651f4ad8048f, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1622660614, guid: f77534317f8963446b5d651f4ad8048f, type: 3}
+      propertyPath: m_Center.y
+      value: -0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 1622660614, guid: f77534317f8963446b5d651f4ad8048f, type: 3}
+      propertyPath: m_Center.z
+      value: 0.015
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720537088, guid: f77534317f8963446b5d651f4ad8048f, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3811395484966471780, guid: f77534317f8963446b5d651f4ad8048f, type: 3}
       propertyPath: m_RootOrder
