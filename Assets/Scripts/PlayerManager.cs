@@ -35,7 +35,6 @@ public class PlayerManager : MonoBehaviour
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out raycastHit, HIT_DISTANCE)) {
             GameObject intersectedObject = raycastHit.collider.gameObject;
             if (intersectedObject.tag == "Interactable") {
-                Debug.Log("HIT intectac");
                 currentToolHit = intersectedObject;
                 currentToolHit.GetComponent<ObjectInteraction>().enableTooltipAndOutline(true);
                 
