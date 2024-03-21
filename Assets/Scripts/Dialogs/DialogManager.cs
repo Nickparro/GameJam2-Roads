@@ -10,7 +10,7 @@ public class DialogManager : MonoBehaviour
     public GameObject dialogPanelUi;
     [SerializeField]
     private TextMeshProUGUI dialogText;
-    private bool dialogState = false;
+    public bool dialogState = false;
     
     private void Awake() {
         if (instance == null)
