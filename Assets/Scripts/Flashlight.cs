@@ -10,10 +10,11 @@ public class Flashlight : MonoBehaviour
 
     void Update()
     {
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                flashLight.enabled = !isLightOn;
-                isLightOn = !isLightOn;
-            }
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            flashLight.enabled = !isLightOn;
+            SoundManager.Instance.PlaySound(flashSound, false);
+            isLightOn = !isLightOn;
+        }
     }
 }
