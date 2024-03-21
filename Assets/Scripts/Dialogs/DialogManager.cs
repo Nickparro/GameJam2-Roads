@@ -7,10 +7,10 @@ public class DialogManager : MonoBehaviour
 {
     public static DialogManager instance;
     Dictionary<string, string> dialogsMap = new Dictionary<string, string>();
-    private GameObject dialogPanelUi;
+    public GameObject dialogPanelUi;
     [SerializeField]
     private TextMeshProUGUI dialogText;
-    private bool dialogState = false;
+    public bool dialogState = false;
     
     private void Awake() {
         if (instance == null)
@@ -18,8 +18,6 @@ public class DialogManager : MonoBehaviour
         else
             Destroy(gameObject);
 
-        dialogPanelUi = GameObject.FindGameObjectWithTag("Dialog");
-        dialogPanelUi.SetActive(false);
         dialogsMap.Add("trigger1", "First dialog");
         dialogsMap.Add("trigger2", "Second dialog");
     }
@@ -27,10 +25,12 @@ public class DialogManager : MonoBehaviour
     public void HandleShowDialog(string dialog) {
         toggleDialogState(true);
         dialogText.text = dialogsMap[dialog];
+        GameManager.Instance.PauseGame();
     }
 
 
     public void HandleHideDialog() {
+        GameManager.Instance.ResumeGame();
         toggleDialogState(false);
     }
 

@@ -9,13 +9,13 @@ public class PlayerMovement : MonoBehaviour
     public Slider staminaBar;
     private float maxStamina = 10f;
     private float currentStamina;
+    public FloorLayers currentFlor;
+    [SerializeField] private AudioClip[] audioClips;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         currentStamina = maxStamina;
-        //staminaBar.maxValue = maxStamina;
-        //staminaBar.value = maxStamina;
     }
 
     void LateUpdate()
@@ -48,17 +48,18 @@ public class PlayerMovement : MonoBehaviour
                 Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
                 rb.MovePosition(rb.position + moveDir.normalized * speed * Time.deltaTime);
             }
-
-            //staminaBar.value = currentStamina;
         }
         else
         {
             currentStamina += Time.deltaTime;
             if (currentStamina > maxStamina)
                 currentStamina = maxStamina;
-
-            //staminaBar.value = currentStamina;
         }
+    }
+
+    public void StepSound()
+    {
+
     }
 
     private void OnTriggerEnter(Collider other) {
