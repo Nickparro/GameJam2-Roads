@@ -26,6 +26,8 @@ public class PlayerManager : MonoBehaviour
                 acquiredTools.Add(toolToAdd);
                 Destroy(currentToolHit);
                 Debug.Log(acquiredTools.Count);
+            } else {
+                currentToolHit.GetComponent<Animator>().SetBool("IsOpen", true);
             }
         }
     }
@@ -36,8 +38,7 @@ public class PlayerManager : MonoBehaviour
             GameObject intersectedObject = raycastHit.collider.gameObject;
             if (intersectedObject.tag == "Interactable") {
                 currentToolHit = intersectedObject;
-                currentToolHit.GetComponent<ObjectInteraction>().enableTooltipAndOutline(true);
-                
+                currentToolHit.GetComponent<ObjectInteraction>().enableTooltipAndOutline(true);                
             }
             return true;
         }
