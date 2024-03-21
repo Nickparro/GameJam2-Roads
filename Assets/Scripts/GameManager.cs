@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     private bool gamePaused = false;
     public AudioClip ambientSound;
-    [SerializeField] private GameObject pausePanel;
+    [SerializeField] private GameObject pausePanel, gameOverPanel;
     private void Awake()
     {
         if (Instance == null)
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         SoundManager.Instance.PlayMusic(ambientSound);
+        ResumeGame();
     }
     void Update()
     {
@@ -53,5 +55,21 @@ public class GameManager : MonoBehaviour
         Cursor.visible = false;
         Time.timeScale = 1;
         gamePaused = false;
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void GameOver()
+    {
+        PauseGame();
+        gameOverPanel.SetActive(true);
     }
 }

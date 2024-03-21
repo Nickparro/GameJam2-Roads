@@ -105,6 +105,6 @@ public class PlayerManager : MonoBehaviour
 
     public void TakeDamage()
     {
-        
+        GameManager.Instance.GameOver();
     }
 }
