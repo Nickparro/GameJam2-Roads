@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     private bool gamePaused = false;
+    public AudioClip ambientSound;
     [SerializeField] private GameObject pausePanel;
     private void Awake()
     {
@@ -14,6 +15,11 @@ public class GameManager : MonoBehaviour
             Instance = this;
         else
             Destroy(gameObject);
+    }
+
+    private void Start()
+    {
+        SoundManager.Instance.PlayMusic(ambientSound);
     }
     void Update()
     {

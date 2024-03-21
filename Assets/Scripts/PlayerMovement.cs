@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     private float currentStamina;
     public EnemyController enemyController;
     public FloorLayers currentFloor;
+    public AudioClip[] audioClips;
+    public AudioClip currentClip;
 
     private void Start()
     {
@@ -48,9 +50,13 @@ public class PlayerMovement : MonoBehaviour
                 Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
                 rb.MovePosition(rb.position + moveDir.normalized * speed * Time.deltaTime);
             }
+            if (!SoundManager.Instance.effects.isPlaying)
+                SoundManager.Instance.PlaySound(currentClip, false);
         }
         else
         {
+            SoundManager.Instance.effects.clip = null;
+            SoundManager.Instance.effects.Stop();
             currentStamina += Time.deltaTime;
             if (currentStamina > maxStamina)
                 currentStamina = maxStamina;
