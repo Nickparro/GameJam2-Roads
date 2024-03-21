@@ -23,19 +23,19 @@ public class FloorDetecter : MonoBehaviour
             case "Road":
                 player.currentFloor = FloorLayers.Road;
                 player.currentClip = player.audioClips[2];
-                SoundManager.Instance.effects.clip = null;
-                SoundManager.Instance.effects.Stop();
+                SoundManager.Instance.steps.clip = null;
+                SoundManager.Instance.steps.Stop();
                 break;
             case "Grass":
                 player.currentFloor = FloorLayers.Grass;
-                SoundManager.Instance.effects.clip = null;
-                SoundManager.Instance.effects.Stop();
+                SoundManager.Instance.steps.clip = null;
+                SoundManager.Instance.steps.Stop();
                 break;
             case "Dirt":
                 player.currentFloor = FloorLayers.Dirt;
                 player.currentClip = player.audioClips[0];
-                SoundManager.Instance.effects.clip = null;
-                SoundManager.Instance.effects.Stop();
+                SoundManager.Instance.steps.clip = null;
+                SoundManager.Instance.steps.Stop();
                 break;
         }
     }

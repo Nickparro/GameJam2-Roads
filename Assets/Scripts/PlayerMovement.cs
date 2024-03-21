@@ -50,13 +50,13 @@ public class PlayerMovement : MonoBehaviour
                 Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
                 rb.MovePosition(rb.position + moveDir.normalized * speed * Time.deltaTime);
             }
-            if (!SoundManager.Instance.effects.isPlaying)
-                SoundManager.Instance.PlaySound(currentClip, false);
+            if (!SoundManager.Instance.steps.isPlaying)
+                SoundManager.Instance.PlaySteps(currentClip, false);
         }
         else
         {
-            SoundManager.Instance.effects.clip = null;
-            SoundManager.Instance.effects.Stop();
+            SoundManager.Instance.steps.clip = null;
+            SoundManager.Instance.steps.Stop();
             currentStamina += Time.deltaTime;
             if (currentStamina > maxStamina)
                 currentStamina = maxStamina;
