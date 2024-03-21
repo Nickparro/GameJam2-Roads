@@ -16,21 +16,21 @@ public class EnemyController : MonoBehaviour
     public float actualSpeed;
     public Animator enemyAnim;
     [SerializeField] AudioClip stepGrass;
+    public float damageDistance = 5f;
     void Start()
     {
         aiNav.speed = minSpeed;
         enemyAnim.SetBool("isRunning", false);
     }
 
-    // Update is called once per frame
     void Update()
     {
         enemyDestination = playerPos.position;
         aiNav.destination = enemyDestination;
-
         actualSpeed = aiNav.speed;
         SpeedUpdate();
         changeAnimation();
+        HurtPlayer();
     }
 
     void SpeedUpdate()
@@ -63,5 +63,14 @@ public class EnemyController : MonoBehaviour
     {
         aiNav.Warp(teleportPoint);
     }
-    
+
+    void HurtPlayer()
+    {
+        float distanceToPlayer = Vector3.Distance(transform.position, playerPos.position);
+        if (distanceToPlayer <= damageDistance)
+        {
+            playerPos.GetComponent<PlayerManager>().TakeDamage();
+        }
+    }
+
 }
