@@ -8,14 +8,18 @@ public class EnemyController : MonoBehaviour
     [SerializeField] NavMeshAgent aiNav;
     [SerializeField] Transform playerPos;
     [SerializeField] Transform carPos;
+    [SerializeField] Transform middleMap;
     [SerializeField] Transform gasStationPos;
     [SerializeField] Vector3 enemyDestination;
     [SerializeField] float minSpeed = 2f;
     [SerializeField] float maxSpeed = 10f;
     public float actualSpeed;
+    public Animator enemyAnim;
+    [SerializeField] AudioClip stepGrass;
     void Start()
     {
         aiNav.speed = minSpeed;
+        enemyAnim.SetBool("isRunning", false);
     }
 
     // Update is called once per frame
@@ -26,6 +30,7 @@ public class EnemyController : MonoBehaviour
 
         actualSpeed = aiNav.speed;
         SpeedUpdate();
+        changeAnimation();
     }
 
     void SpeedUpdate()
@@ -43,8 +48,20 @@ public class EnemyController : MonoBehaviour
         }
 
     }
+
+    void changeAnimation()
+    {
+        if(playerPos.position.x < middleMap.position.x)
+        {
+            enemyAnim.SetBool("isRunning", true);
+        } else if (playerPos.position.x > middleMap.position.x)
+        {
+            enemyAnim.SetBool("isRunning", false);
+        }
+    }
     public void TeleportEnemy(Vector3 teleportPoint)
     {
         aiNav.Warp(teleportPoint);
     }
+    
 }
