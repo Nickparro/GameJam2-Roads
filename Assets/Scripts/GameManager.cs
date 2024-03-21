@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     private bool gamePaused = false;
-
+    [SerializeField] private GameObject pausePanel;
     private void Awake()
     {
         if (Instance == null)
@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
         Cursor.visible = true;
         Time.timeScale = 0;
         gamePaused = true;
-       // pausePanel.SetActive(true);
+        pausePanel.SetActive(true);
     }
 
     public void ResumeGame()
@@ -47,6 +47,6 @@ public class GameManager : MonoBehaviour
         Cursor.visible = false;
         Time.timeScale = 1;
         gamePaused = false;
-      //  pausePanel.SetActive(false);
+        pausePanel.SetActive(false);
     }
 }
