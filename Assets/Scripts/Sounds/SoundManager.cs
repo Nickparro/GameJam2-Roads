@@ -5,13 +5,12 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance;
-    public AudioSource music, effects;
+    public AudioSource music, effects, steps;
     private void Awake()
     {
         if(Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -30,6 +29,20 @@ public class SoundManager : MonoBehaviour
             effects.clip = clip;
             effects.loop = true;
             effects.Play();
+        }
+    }
+
+    public void PlaySteps(AudioClip clip, bool isLoop)
+    {
+        if (!isLoop)
+        {
+            steps.PlayOneShot(clip);
+        }
+        else
+        {
+            steps.clip = clip;
+            steps.loop = true;
+            steps.Play();
         }
     }
 

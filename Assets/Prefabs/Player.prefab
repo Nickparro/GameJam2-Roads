@@ -407,6 +407,11 @@ MonoBehaviour:
   staminaBar: {fileID: 0}
   enemyController: {fileID: 0}
   currentFloor: 0
+  audioClips:
+  - {fileID: 8300000, guid: 2d62ed3f120e0ed45bd00397216b2cd3, type: 3}
+  - {fileID: 8300000, guid: 0a02e7eea5a39f24eafe802d2cc7cc4e, type: 3}
+  - {fileID: 8300000, guid: 4c4622b9b3180b3479e2b04706944904, type: 3}
+  currentClip: {fileID: 8300000, guid: 2d62ed3f120e0ed45bd00397216b2cd3, type: 3}
 --- !u!54 &250438655133328724
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -512,7 +517,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 500
   field of view: 60
   orthographic: 0
   orthographic size: 5
