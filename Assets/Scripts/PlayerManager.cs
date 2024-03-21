@@ -29,7 +29,8 @@ public class PlayerManager : MonoBehaviour
         Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * HIT_DISTANCE,  Color.white);
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out raycastHit, HIT_DISTANCE)) {
             GameObject intersectedObject = raycastHit.collider.gameObject;
-            if (intersectedObject.tag == "Tool") {
+            if (intersectedObject.tag == "Interactable") {
+                Debug.Log("HIT intectac");
                 currentToolHit = intersectedObject;
                 currentToolHit.GetComponent<ObjectInteraction>().enableTooltipAndOutline(true);
                 
@@ -37,7 +38,7 @@ public class PlayerManager : MonoBehaviour
             return true;
         }
 
-        if (currentToolHit) {
+        if (currentToolHit != null && currentToolHit.tag == "Interactable") {
             currentToolHit.GetComponent<ObjectInteraction>().enableTooltipAndOutline(false);
         }
         return false;

@@ -15,12 +15,8 @@ public class ObjectInteraction : MonoBehaviour
         tooltip.GetComponentInChildren<TextMeshProUGUI>().text = textToShow;
     }
 
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private void LateUpdate() {
+        tooltip.transform.LookAt(tooltip.transform.position + Camera.main.transform.rotation * Vector3.forward, Camera.main.transform.rotation * Vector3.up);
     }
 
     public void enableTooltipAndOutline(bool state) {

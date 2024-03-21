@@ -7,6 +7,10 @@ TagManager:
   - Dialog
   - DialogTrigger
   - Tool
+  - Interactable
+  - Grass
+  - Road
+  - Dirt
   layers:
   - Default
   - TransparentFX

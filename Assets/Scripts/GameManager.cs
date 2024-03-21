@@ -17,16 +17,17 @@ public class GameManager : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !DialogManager.instance.dialogState)
         {
             if (gamePaused)
             {
                 ResumeGame();
-
+                pausePanel.SetActive(false);
             }
             else
             {
                 PauseGame();
+                pausePanel.SetActive(true);
 
             }
         }
@@ -38,7 +39,6 @@ public class GameManager : MonoBehaviour
         Cursor.visible = true;
         Time.timeScale = 0;
         gamePaused = true;
-        pausePanel.SetActive(true);
     }
 
     public void ResumeGame()
@@ -47,6 +47,5 @@ public class GameManager : MonoBehaviour
         Cursor.visible = false;
         Time.timeScale = 1;
         gamePaused = false;
-        pausePanel.SetActive(false);
     }
 }
