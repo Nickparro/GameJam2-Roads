@@ -25,12 +25,12 @@ public class DialogManager : MonoBehaviour
     public void HandleShowDialog(string dialog) {
         toggleDialogState(true);
         dialogText.text = dialogsMap[dialog];
-        GameManager.Instance.PauseGame();
+        //GameManager.Instance.PauseGame();
     }
 
 
     public void HandleHideDialog() {
-        GameManager.Instance.ResumeGame();
+        //GameManager.Instance.ResumeGame();
         toggleDialogState(false);
     }
 
