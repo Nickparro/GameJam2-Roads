@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private float maxStamina = 10f;
     private float currentStamina;
     public EnemyController enemyController;
+    public FloorLayers currentFloor;
 
     private void Start()
     {

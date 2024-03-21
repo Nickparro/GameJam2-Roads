@@ -21,13 +21,13 @@ public class FloorDetecter : MonoBehaviour
         switch (collision.collider.tag)
         {
             case "Road":
-                player.currentFlor = FloorLayers.Road;
+                player.currentFloor = FloorLayers.Road;
                 break;
             case "Grass":
-                player.currentFlor = FloorLayers.Grass;
+                player.currentFloor = FloorLayers.Grass;
                 break;
             case "Dirt":
-                player.currentFlor = FloorLayers.Dirt;
+                player.currentFloor = FloorLayers.Dirt;
                 break;
         }
     }
