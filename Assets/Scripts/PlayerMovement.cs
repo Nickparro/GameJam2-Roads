@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     public Slider staminaBar;
     private float maxStamina = 10f;
     private float currentStamina;
+    public EnemyController enemyController;
+    public FloorLayers currentFloor;
 
     private void Start()
     {
@@ -59,6 +61,31 @@ public class PlayerMovement : MonoBehaviour
         if (other.tag == "DialogTrigger") {
             DialogManager.instance.HandleShowDialog(other.name);
             Destroy(other);
+        }
+
+        if (other.tag =="Zone1")
+        {
+            enemyController.TeleportEnemy(other.transform.GetChild(0).position);
+        }
+        else if (other.tag == "Zone2")
+        {
+            enemyController.TeleportEnemy(other.transform.GetChild(0).position);
+        }
+        else if (other.tag =="Zone3")
+        {
+            enemyController.TeleportEnemy(other.transform.GetChild(0).position);
+        }
+        else if (other.tag =="Zone4")
+        {
+            enemyController.TeleportEnemy(other.transform.GetChild(0).position);
+        }
+        else if (other.tag =="Zone5")
+        {
+            enemyController.TeleportEnemy(other.transform.GetChild(0).position);
+        }
+        else if (other.tag =="Zone6")
+        {
+            enemyController.TeleportEnemy(other.transform.GetChild(0).position);
         }
     }
 }
