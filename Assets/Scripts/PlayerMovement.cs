@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     public Slider staminaBar;
     private float maxStamina = 10f;
     private float currentStamina;
+    public FloorLayers currentFlor;
+    [SerializeField] private AudioClip[] audioClips;
 
     private void Start()
     {
@@ -53,6 +55,11 @@ public class PlayerMovement : MonoBehaviour
             if (currentStamina > maxStamina)
                 currentStamina = maxStamina;
         }
+    }
+
+    public void StepSound()
+    {
+
     }
 
     private void OnTriggerEnter(Collider other) {

@@ -228,6 +228,64 @@ MonoBehaviour:
   flashLight: {fileID: 845428648}
   flashSound: {fileID: 8300000, guid: 507f79b0f1168e1409bd49e0a7e17f73, type: 3}
   powerBar: {fileID: 0}
+--- !u!1 &1966321202
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1966321203}
+  - component: {fileID: 1966321205}
+  - component: {fileID: 1966321204}
+  m_Layer: 0
+  m_Name: FloorDetecter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1966321203
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966321202}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.509, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 250438655133328723}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1966321205
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966321202}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.28495407, z: 1}
+  m_Center: {x: 0, y: -0.35752296, z: 0}
+--- !u!114 &1966321204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966321202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fb4a8b5a808a97489f5ac15316383c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &250438655133328734
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,6 +322,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 250438655764758084}
+  - {fileID: 1966321203}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -54.4, z: 0}
@@ -346,6 +405,11 @@ MonoBehaviour:
   speed: 4
   mainCamera: {fileID: 250438655764758084}
   staminaBar: {fileID: 0}
+  currentFlor: 0
+  audioClips:
+  - {fileID: 8300000, guid: 83b17b6b210072f4ca2804b95e41c9dd, type: 3}
+  - {fileID: 8300000, guid: 0a02e7eea5a39f24eafe802d2cc7cc4e, type: 3}
+  - {fileID: 8300000, guid: 0a02e7eea5a39f24eafe802d2cc7cc4e, type: 3}
 --- !u!54 &250438655133328724
 Rigidbody:
   m_ObjectHideFlags: 0
