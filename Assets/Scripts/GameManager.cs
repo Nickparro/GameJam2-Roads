@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public bool playerWin = false;
     public GameObject lateTriggers;
     public GameObject earlyTriggers;
+    public LeanguageSetter leanguageSetter;
 
 
     private void Awake()
@@ -33,6 +34,7 @@ public class GameManager : MonoBehaviour
     {
         PauseGame();
         StartCoroutine("IntroGame");
+        leanguageSetter.UpdateText();
         
         
     }
