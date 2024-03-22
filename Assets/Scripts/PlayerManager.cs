@@ -12,6 +12,7 @@ public class PlayerManager : MonoBehaviour
     private float HIT_DISTANCE = 2f;
     private Camera mainCamera;
     bool isInPanic = false;
+    ScreamEffect screamer;
 
     private void Awake()
     {
@@ -24,6 +25,7 @@ public class PlayerManager : MonoBehaviour
     private void Start()
     {
         mainCamera = Camera.main;
+        screamer = GetComponent<ScreamEffect>();
     }
 
     private void Update()
@@ -39,6 +41,7 @@ public class PlayerManager : MonoBehaviour
                 Destroy(currentToolHit);
                 Debug.Log(acquiredTools.Count);
                 GameManager.Instance.ActivateEnemy();
+                screamer.scream = true;
             }
             else
             {
