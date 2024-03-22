@@ -53,7 +53,6 @@ public class GameManager : MonoBehaviour
 
     public void ActivateEnemy()
     {
-       // enemyGO.transform.position = new Vector3(220,0,25);
         enemyGO.SetActive(true);
     }
 
