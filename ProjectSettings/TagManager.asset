@@ -18,6 +18,7 @@ TagManager:
   - Zone1
   - Zone3
   - Enemy
+  - Gas
   layers:
   - Default
   - TransparentFX

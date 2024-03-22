@@ -9,7 +9,9 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     private bool gamePaused = false;
     public AudioClip ambientSound;
+    public AudioClip lateGameSound;
     [SerializeField] private GameObject pausePanel, gameOverPanel;
+    public GameObject rainParticles;
     private void Awake()
     {
         if (Instance == null)
@@ -39,6 +41,13 @@ public class GameManager : MonoBehaviour
 
             }
         }
+    }
+
+    public void LateGameStart()
+    {
+        rainParticles.SetActive(true);
+        SoundManager.Instance.PlayRain();
+        SoundManager.Instance.PlayMusic(lateGameSound);
     }
 
     public void PauseGame()

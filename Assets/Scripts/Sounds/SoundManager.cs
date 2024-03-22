@@ -5,10 +5,11 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance;
-    public AudioSource music, effects, steps;
+    public AudioSource music, effects, steps, rain;
+    public AudioClip rainClip;
     private void Awake()
     {
-        if(Instance == null)
+        if (Instance == null)
         {
             Instance = this;
         }
@@ -31,7 +32,12 @@ public class SoundManager : MonoBehaviour
             effects.Play();
         }
     }
-
+    public void PlayMusic(AudioClip clip)
+    {
+        music.clip = clip;
+        music.loop = true;
+        music.Play();
+    }
     public void PlaySteps(AudioClip clip, bool isLoop)
     {
         if (!isLoop)
@@ -46,10 +52,11 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public void PlayMusic(AudioClip clip)
+    public void PlayRain()
     {
-        music.clip = clip;
-        music.loop = true;
-        music.Play();
+        rain.clip = rainClip;
+        rain.loop = true;
+        rain.Play();
     }
+
 }

@@ -48,10 +48,12 @@ public class PlayerManager : MonoBehaviour
 
     private bool canGrabObject()
     {
-        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * HIT_DISTANCE, Color.white);
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out raycastHit, HIT_DISTANCE))
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Debug.DrawRay(ray.origin, ray.direction * HIT_DISTANCE, Color.white);
+
+        if (Physics.Raycast(ray, out RaycastHit hit, HIT_DISTANCE))
         {
-            GameObject intersectedObject = raycastHit.collider.gameObject;
+            GameObject intersectedObject = hit.collider.gameObject;
             if (intersectedObject.tag == "Interactable")
             {
                 currentToolHit = intersectedObject;
