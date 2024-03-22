@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     private bool gamePaused = false;
+    public GameObject option;
     public AudioClip ambientSound;
     public AudioClip lateGameSound;
     [SerializeField] private GameObject pausePanel, gameOverPanel, winnerPanel;
@@ -16,8 +18,11 @@ public class GameManager : MonoBehaviour
     public bool playerWin = false;
     public GameObject lateTriggers;
     public GameObject earlyTriggers;
+
+
     private void Awake()
     {
+        
         if (Instance == null)
             Instance = this;
         else
@@ -26,18 +31,20 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        SoundManager.Instance.PlayMusic(ambientSound);
-        earlyTriggers.SetActive(true);
-        ResumeGame();
+        PauseGame();
+        StartCoroutine("IntroGame");
+        
+        
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !DialogManager.instance.dialogState)
+        if (Input.GetKeyDown(KeyCode.Escape) )
         {
             if (gamePaused)
             {
                 ResumeGame();
                 pausePanel.SetActive(false);
+                option.SetActive(false);
             }
             else
             {
@@ -102,4 +109,14 @@ public class GameManager : MonoBehaviour
         PauseGame();
         winnerPanel.SetActive(true);
     }
+
+    IEnumerator IntroGame()
+    {
+        yield return new WaitForSecondsRealtime(35f);
+        ResumeGame();
+        SoundManager.Instance.PlayMusic(ambientSound);
+        earlyTriggers.SetActive(true);
+        
+    }
+
 }
