@@ -4264,6 +4264,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 850165911, guid: f77534317f8963446b5d651f4ad8048f, type: 3}
   m_PrefabInstance: {fileID: 1965817338}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1965817341 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1215639006, guid: f77534317f8963446b5d651f4ad8048f, type: 3}
+  m_PrefabInstance: {fileID: 1965817338}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2011814319 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3458593646029349616, guid: f77534317f8963446b5d651f4ad8048f, type: 3}
@@ -5075,7 +5086,7 @@ PrefabInstance:
     - target: {fileID: 7709716804366808275, guid: c53ee3570ed60b34d8d5964dcf7b0c12, type: 3}
       propertyPath: pickup
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1965817341}
     - target: {fileID: 7709716804366808275, guid: c53ee3570ed60b34d8d5964dcf7b0c12, type: 3}
       propertyPath: thanks
       value: 
