@@ -4710,7 +4710,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1420477048, guid: 1ef431ae3b59c144ab53c75ede372232, type: 3}
       propertyPath: m_InitialState
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1420477048, guid: 1ef431ae3b59c144ab53c75ede372232, type: 3}
       propertyPath: m_SceneBindings.Array.data[0].value
