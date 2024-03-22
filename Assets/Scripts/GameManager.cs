@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     private bool gamePaused = false;
+    public GameObject option;
     public AudioClip ambientSound;
     public AudioClip lateGameSound;
     [SerializeField] private GameObject pausePanel, gameOverPanel, winnerPanel;
@@ -37,12 +38,13 @@ public class GameManager : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !DialogManager.instance.dialogState)
+        if (Input.GetKeyDown(KeyCode.Escape) )
         {
             if (gamePaused)
             {
                 ResumeGame();
                 pausePanel.SetActive(false);
+                option.SetActive(false);
             }
             else
             {
