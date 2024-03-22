@@ -10,10 +10,10 @@ public class GameManager : MonoBehaviour
     private bool gamePaused = false;
     public AudioClip ambientSound;
     public AudioClip lateGameSound;
-    [SerializeField] private GameObject pausePanel, gameOverPanel;
+    [SerializeField] private GameObject pausePanel, gameOverPanel, winnerPanel;
     public GameObject rainParticles;
     public GameObject enemyGO;
-    public AudioClip suspenceStart;
+    public bool playerWin = false;
     private void Awake()
     {
         if (Instance == null)
@@ -43,6 +43,11 @@ public class GameManager : MonoBehaviour
 
             }
         }
+
+        if(playerWin)
+        {
+            WinGame();
+        }
     }
 
     public void LateGameStart()
@@ -54,8 +59,8 @@ public class GameManager : MonoBehaviour
 
     public void ActivateEnemy()
     {
+       // enemyGO.transform.position = new Vector3(220,0,25);
         enemyGO.SetActive(true);
-        SoundManager.Instance.PlaySound(suspenceStart, false);
     }
 
     public void PauseGame()
@@ -83,10 +88,14 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
-
     public void GameOver()
     {
         PauseGame();
         gameOverPanel.SetActive(true);
+    }
+    public void WinGame()
+    {
+        PauseGame();
+        winnerPanel.SetActive(true);
     }
 }
