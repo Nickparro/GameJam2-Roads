@@ -13,7 +13,6 @@ public class LateGameDetecter : MonoBehaviour
             if (!isInside)
             {
                 SoundManager.Instance.PlayMusic(gasStationClip);
-                isInside = true;
             }
             else
             {
@@ -22,5 +21,10 @@ public class LateGameDetecter : MonoBehaviour
             }
             
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        isInside = true;
     }
 }

@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public AudioClip lateGameSound;
     [SerializeField] private GameObject pausePanel, gameOverPanel;
     public GameObject rainParticles;
+    public GameObject enemyGO;
     private void Awake()
     {
         if (Instance == null)
@@ -48,6 +49,12 @@ public class GameManager : MonoBehaviour
         rainParticles.SetActive(true);
         SoundManager.Instance.PlayRain();
         SoundManager.Instance.PlayMusic(lateGameSound);
+    }
+
+    public void ActivateEnemy()
+    {
+       // enemyGO.transform.position = new Vector3(220,0,25);
+        enemyGO.SetActive(true);
     }
 
     public void PauseGame()

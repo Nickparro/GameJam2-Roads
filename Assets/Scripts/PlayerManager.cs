@@ -38,6 +38,7 @@ public class PlayerManager : MonoBehaviour
                 acquiredTools.Add(toolToAdd);
                 Destroy(currentToolHit);
                 Debug.Log(acquiredTools.Count);
+                GameManager.Instance.ActivateEnemy();
             }
             else
             {
