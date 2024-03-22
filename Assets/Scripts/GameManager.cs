@@ -10,9 +10,10 @@ public class GameManager : MonoBehaviour
     private bool gamePaused = false;
     public AudioClip ambientSound;
     public AudioClip lateGameSound;
-    [SerializeField] private GameObject pausePanel, gameOverPanel;
+    [SerializeField] private GameObject pausePanel, gameOverPanel, winnerPanel;
     public GameObject rainParticles;
     public GameObject enemyGO;
+    public bool playerWin = false;
     private void Awake()
     {
         if (Instance == null)
@@ -41,6 +42,11 @@ public class GameManager : MonoBehaviour
                 pausePanel.SetActive(true);
 
             }
+        }
+
+        if(playerWin)
+        {
+            WinGame();
         }
     }
 
@@ -82,10 +88,14 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
-
     public void GameOver()
     {
         PauseGame();
         gameOverPanel.SetActive(true);
+    }
+    public void WinGame()
+    {
+        PauseGame();
+        winnerPanel.SetActive(true);
     }
 }
