@@ -178,6 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa9b37da9cb53e0479e4c20b942eefec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  option: {fileID: 0}
   ambientSound: {fileID: 8300000, guid: 8a24e5441a65dcb49abd572c9f270687, type: 3}
   lateGameSound: {fileID: 8300000, guid: e1aa7250ef082ac429aeacb9e98f893d, type: 3}
   pausePanel: {fileID: 0}
@@ -204,7 +205,6 @@ MonoBehaviour:
   dialogText: {fileID: 0}
   dialogState: 0
   subtitleDataList:
-  - {fileID: 11400000, guid: 95b6605aacee1ba4aa2555ac941f710e, type: 2}
   - {fileID: 11400000, guid: 98bdaa4376650e54291407c0f01f99af, type: 2}
   - {fileID: 11400000, guid: 423479f721f8c9c48bcee91566f3b94a, type: 2}
   - {fileID: 11400000, guid: 172b66b2dc733944d848eb2f5edc168a, type: 2}
