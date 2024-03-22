@@ -11,6 +11,7 @@ public class ObjectInteraction : MonoBehaviour
     private GameObject tooltip;
     public GameObject activateItem;
     public string textToShow = "Press K to Pickup";
+    public bool isFinalState = false;
 
     private void Awake() {
         tooltip.SetActive(false);

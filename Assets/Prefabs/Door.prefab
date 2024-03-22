@@ -124,7 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tooltip: {fileID: 1865659128483411681}
   activateItem: {fileID: 0}
-  textToShow: Presiona E para abrir
+  textToShow: Press E to open
 --- !u!114 &5835355960863838428
 MonoBehaviour:
   m_ObjectHideFlags: 0
