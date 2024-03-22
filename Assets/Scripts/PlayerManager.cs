@@ -13,6 +13,7 @@ public class PlayerManager : MonoBehaviour
     private Camera mainCamera;
     bool isInPanic = false;
     ScreamEffect screamer;
+    public EnemyController enemyController;
 
     private void Awake()
     {
@@ -73,11 +74,22 @@ public class PlayerManager : MonoBehaviour
         return false;
     }
 
+    private bool hasDetectedColision = false;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy"))
         {
             PanicEffect();
+        }
+        if (other.CompareTag("DialogTrigger") && !hasDetectedColision)
+        {
+            DialogManager.instance.SetDialog();
+            hasDetectedColision = true;
+        }
+        else if (other.CompareTag("Zone1") || other.CompareTag("Zone2") || other.CompareTag("Zone3") ||
+                 other.CompareTag("Zone4") || other.CompareTag("Zone5") || other.CompareTag("Zone6"))
+        {
+            enemyController.TeleportEnemy(other.transform.GetChild(0).position);
         }
     }
 
@@ -86,6 +98,11 @@ public class PlayerManager : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             RemovePanicEffect();
+        }
+        if (other.CompareTag("DialogTrigger") && hasDetectedColision)
+        {
+            hasDetectedColision = false;
+            Destroy(other.gameObject);
         }
     }
 

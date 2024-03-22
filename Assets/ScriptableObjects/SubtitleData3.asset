@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12908f3ff9b331e4ea49beaaa663179e, type: 3}
+  m_Name: SubtitleData3
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: cf435fbfee1c47d4bb58b9c163b153d6, type: 3}
+  subtitleText: 'My senses are on high alert, every creak of a broken branch beneath
+    my feet or the rustle of a nocturnal animal sends a shiver down my spine. Sometimes,
+    the shadows seem to come alive, dancing among the trees as if they were entities
+    of their own, playing with my mind and sowing doubt about what is real and what
+    is not.
+
+'

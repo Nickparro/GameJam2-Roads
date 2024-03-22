@@ -11,26 +11,43 @@ public class DialogManager : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI dialogText;
     public bool dialogState = false;
-    
+    public List<SubtitleData> subtitleDataList = new List<SubtitleData>();
+    private int currentIndex = 0;
+    private SubtitleLogic subtitleLogic;
+
     private void Awake() {
         if (instance == null)
             instance = this;
         else
             Destroy(gameObject);
+    }
 
-        dialogsMap.Add("trigger1", "First dialog");
-        dialogsMap.Add("trigger2", "Second dialog");
+    private void Start()
+    {
+        subtitleLogic = GetComponent<SubtitleLogic>();
+        subtitleLogic.subtitleText = dialogText;
+    }
+    public void SetDialog()
+    {
+        if (currentIndex < subtitleDataList.Count)
+        {
+            Debug.Log("sub: " + currentIndex);
+            SubtitleManager.instance.PlaySubtitle(subtitleDataList[currentIndex]);
+            currentIndex++;
+        }
+        else
+        {
+            Debug.LogWarning("No hay más datos de subtítulos para reproducir.");
+        }
     }
 
     public void HandleShowDialog(string dialog) {
         toggleDialogState(true);
-        dialogText.text = dialogsMap[dialog];
-        //GameManager.Instance.PauseGame();
+        subtitleLogic.AddLongSubtitle(dialog);
     }
 
 
     public void HandleHideDialog() {
-        //GameManager.Instance.ResumeGame();
         toggleDialogState(false);
     }
 

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12908f3ff9b331e4ea49beaaa663179e, type: 3}
+  m_Name: SubtitleData11
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: 3e6e70c071ff2e94183699705fe8209f, type: 3}
+  subtitleText: 'Finally, I reach my car and realize the terrifying truth: there
+    never was a sign, my tank is still full, and I''m all alone on this deserted
+    road. What did I really find in that dark road?'

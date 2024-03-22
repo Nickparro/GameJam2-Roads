@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     public GameObject rainParticles;
     public GameObject enemyGO;
     public bool playerWin = false;
+    public GameObject lateTriggers;
+    public GameObject earlyTriggers;
     private void Awake()
     {
         if (Instance == null)
@@ -25,6 +27,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         SoundManager.Instance.PlayMusic(ambientSound);
+        earlyTriggers.SetActive(true);
         ResumeGame();
     }
     void Update()
@@ -59,8 +62,9 @@ public class GameManager : MonoBehaviour
 
     public void ActivateEnemy()
     {
-       // enemyGO.transform.position = new Vector3(220,0,25);
         enemyGO.SetActive(true);
+        lateTriggers.SetActive(true);
+        earlyTriggers.SetActive(false);
     }
 
     public void PauseGame()
