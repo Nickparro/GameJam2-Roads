@@ -10,6 +10,7 @@ public class PlayerManager : MonoBehaviour
     private RaycastHit raycastHit;
     private GameObject currentToolHit;
     private float HIT_DISTANCE = 2f;
+    private int NUMBER_OF_TOOLS = 1;
     private Camera mainCamera;
     bool isInPanic = false;
     ScreamEffect screamer;
@@ -32,21 +33,22 @@ public class PlayerManager : MonoBehaviour
     private void Update()
     {
 
-        if (canGrabObject() && currentToolHit && Input.GetKeyDown("e"))
-        {
+        if (canGrabObject() && currentToolHit && Input.GetKeyDown("e")) {
             GameObject toolToAdd = currentToolHit.GetComponent<ObjectInteraction>().getTheTool();
-            if (toolToAdd != null)
-            {
+            if (toolToAdd != null) {
                 toolToAdd.GetComponent<Image>().color = Color.white;
                 acquiredTools.Add(toolToAdd);
-                Destroy(currentToolHit);
-                Debug.Log(acquiredTools.Count);
                 GameManager.Instance.ActivateEnemy();
                 screamer.scream = true;
-            }
-            else
-            {
-                currentToolHit.GetComponent<Animator>().SetBool("IsOpen", true);
+                Destroy(currentToolHit);
+            } else {
+                if (currentToolHit.GetComponent<ObjectInteraction>().isFinalState && HasAllTheTools()) {
+                    GameManager.Instance.playerWin = true;
+                    Debug.Log(GameManager.Instance.playerWin);
+                }
+                else if (currentToolHit.GetComponent<Animator>() != null) {
+                    currentToolHit.GetComponent<Animator>().SetBool("IsOpen", true);
+                }
             }
         }
     }
@@ -62,7 +64,12 @@ public class PlayerManager : MonoBehaviour
             if (intersectedObject.tag == "Interactable")
             {
                 currentToolHit = intersectedObject;
-                currentToolHit.GetComponent<ObjectInteraction>().enableTooltipAndOutline(true);
+                if (currentToolHit.GetComponent<ObjectInteraction>().isFinalState ) {
+                    if (HasAllTheTools())
+                        currentToolHit.GetComponent<ObjectInteraction>().enableTooltipAndOutline(true);
+                } else {
+                    currentToolHit.GetComponent<ObjectInteraction>().enableTooltipAndOutline(true);
+                }
             }
             return true;
         }
@@ -130,4 +137,8 @@ public class PlayerManager : MonoBehaviour
     {
         GameManager.Instance.GameOver();
     }
+
+    public bool HasAllTheTools() {
+        return acquiredTools.Count == NUMBER_OF_TOOLS;
+    } 
 }
