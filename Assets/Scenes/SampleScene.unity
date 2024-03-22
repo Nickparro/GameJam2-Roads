@@ -2020,7 +2020,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5096977428947080066, guid: 7eba3257c6c7ec6478abce97339efc82, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 591
+      value: 548.5
       objectReference: {fileID: 0}
     - target: {fileID: 5096977428947080066, guid: 7eba3257c6c7ec6478abce97339efc82, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2028,7 +2028,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5096977428947080066, guid: 7eba3257c6c7ec6478abce97339efc82, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 236
+      value: 461.2
       objectReference: {fileID: 0}
     - target: {fileID: 5096977428947080066, guid: 7eba3257c6c7ec6478abce97339efc82, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2922,6 +2922,10 @@ PrefabInstance:
       propertyPath: rainParticles
       value: 
       objectReference: {fileID: 177676678}
+    - target: {fileID: 285224058619671859, guid: 1ef431ae3b59c144ab53c75ede372232, type: 3}
+      propertyPath: suspenceStart
+      value: 
+      objectReference: {fileID: 8300000, guid: 51fbd34be28d6f24f881885414617455, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ef431ae3b59c144ab53c75ede372232, type: 3}
 --- !u!224 &1694179346729754989 stripped

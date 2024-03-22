@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject pausePanel, gameOverPanel;
     public GameObject rainParticles;
     public GameObject enemyGO;
+    public AudioClip suspenceStart;
     private void Awake()
     {
         if (Instance == null)
@@ -54,6 +55,7 @@ public class GameManager : MonoBehaviour
     public void ActivateEnemy()
     {
         enemyGO.SetActive(true);
+        SoundManager.Instance.PlaySound(suspenceStart, false);
     }
 
     public void PauseGame()
