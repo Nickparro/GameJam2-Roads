@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -48,10 +49,17 @@ public class PlayerManager : MonoBehaviour
                 }
                 else if (currentToolHit.GetComponent<Animator>() != null) {
                     currentToolHit.GetComponent<Animator>().SetBool("IsOpen", true);
+                    StartCoroutine(ApplyAnimations(2, currentToolHit.GetComponent<Animator>(), "IsOpen", false));
                 }
             }
         }
     }
+
+    IEnumerator ApplyAnimations(float time, Animator animator, string flag, bool value) {
+        yield return new WaitForSeconds(time);
+        animator.SetBool(flag, value);   
+    }
+
 
     private bool canGrabObject()
     {
