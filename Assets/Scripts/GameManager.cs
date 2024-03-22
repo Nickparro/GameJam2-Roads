@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -16,8 +17,11 @@ public class GameManager : MonoBehaviour
     public bool playerWin = false;
     public GameObject lateTriggers;
     public GameObject earlyTriggers;
+
+
     private void Awake()
     {
+        
         if (Instance == null)
             Instance = this;
         else
@@ -26,9 +30,10 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        SoundManager.Instance.PlayMusic(ambientSound);
-        earlyTriggers.SetActive(true);
-        ResumeGame();
+        PauseGame();
+        StartCoroutine("IntroGame");
+        
+        
     }
     void Update()
     {
@@ -102,4 +107,14 @@ public class GameManager : MonoBehaviour
         PauseGame();
         winnerPanel.SetActive(true);
     }
+
+    IEnumerator IntroGame()
+    {
+        yield return new WaitForSecondsRealtime(35f);
+        ResumeGame();
+        SoundManager.Instance.PlayMusic(ambientSound);
+        earlyTriggers.SetActive(true);
+        
+    }
+
 }
