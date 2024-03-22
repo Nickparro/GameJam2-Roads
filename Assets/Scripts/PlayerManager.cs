@@ -14,7 +14,6 @@ public class PlayerManager : MonoBehaviour
     bool isInPanic = false;
     ScreamEffect screamer;
     public EnemyController enemyController;
-
     private void Awake()
     {
         if (instance == null)
