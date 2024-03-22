@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -39,6 +40,8 @@ public class PlayerManager : MonoBehaviour
             if (toolToAdd != null) {
                 toolToAdd.GetComponent<Image>().color = Color.white;
                 acquiredTools.Add(toolToAdd);
+                TextMeshProUGUI goalText = GameObject.Find("GoalText").GetComponent<TextMeshProUGUI>();
+                goalText.text = "Back to car to put on gas"; 
                 GameManager.Instance.ActivateEnemy();
                 screamer.scream = true;
                 Destroy(currentToolHit);
