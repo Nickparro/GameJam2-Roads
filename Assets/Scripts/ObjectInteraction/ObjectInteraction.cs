@@ -23,7 +23,7 @@ public class ObjectInteraction : MonoBehaviour
     }
 
     public void enableTooltipAndOutline(bool state) {
-        gameObject.GetComponent<Outline>().enabled = state;
+        //gameObject.GetComponent<Outline>().enabled = state;
         tooltip.SetActive(state);
     }
 

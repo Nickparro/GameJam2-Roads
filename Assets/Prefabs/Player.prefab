@@ -316,8 +316,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 250438655133328734}
-  m_LocalRotation: {x: 0, y: -0.45709798, z: 0, w: 0.8894164}
-  m_LocalPosition: {x: 593.3354, y: -44.190765, z: 256.34387}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -325,7 +325,7 @@ Transform:
   - {fileID: 1966321203}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -54.4, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &250438655133328722
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -405,7 +405,6 @@ MonoBehaviour:
   speed: 4
   mainCamera: {fileID: 250438655764758084}
   staminaBar: {fileID: 0}
-  enemyController: {fileID: 0}
   currentFloor: 0
   audioClips:
   - {fileID: 8300000, guid: 2d62ed3f120e0ed45bd00397216b2cd3, type: 3}
@@ -454,6 +453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d09c521c2cf3571409e6020cc81b5e9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyController: {fileID: 0}
 --- !u!1 &250438655764758083
 GameObject:
   m_ObjectHideFlags: 0

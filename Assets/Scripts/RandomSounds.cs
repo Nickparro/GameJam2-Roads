@@ -7,8 +7,8 @@ public class RandomSounds : MonoBehaviour
 {
     [SerializeField] private AudioClip[] soundClips;
     SoundManager soundManager;
-    private float minDelay = 50f;
-    private float maxDelay = 140f;
+    private float minDelay = 30f;
+    private float maxDelay = 90f;
 
     private void Start()
     {
