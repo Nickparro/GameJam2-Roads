@@ -69,13 +69,13 @@ public class GameManager : MonoBehaviour
         gasStationSignal.SetActive(false);
         SoundManager.Instance.PlayRain();
         SoundManager.Instance.PlayMusic(lateGameSound);
+        lateTriggers.SetActive(true);
+        earlyTriggers.SetActive(false);
     }
 
     public void ActivateEnemy()
     {
         enemyGO.SetActive(true);
-        lateTriggers.SetActive(true);
-        earlyTriggers.SetActive(false);
     }
 
     public void PauseGame()

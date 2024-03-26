@@ -49,13 +49,19 @@ public class PlayerManager : MonoBehaviour
                     GameManager.Instance.playerWin = true;
                     Debug.Log(GameManager.Instance.playerWin);
                 }
-                else if (currentToolHit.GetComponent<Animator>() != null) {
+                else if (currentToolHit.gameObject.name == "Door_03") {
                     currentToolHit.GetComponent<Animator>().SetBool("IsOpen", true);
                     StartCoroutine(ApplyAnimations(2, currentToolHit.GetComponent<Animator>(), "IsOpen", false));
                 }
                 else if (currentToolHit.GetComponent<DoorController>() != null)
                 {
                     currentToolHit.GetComponent<DoorController>().OpenDoor();
+                }
+                else if (currentToolHit.gameObject.name == "Tendero" && currentToolHit.GetComponent<ObjectInteraction>().enabled)
+                {
+                    DialogManager.instance.SetDialog();
+                    currentToolHit.GetComponent<ObjectInteraction>().enabled = false;
+                    FindObjectOfType<DoorController>().hasKey = true;
                 }
             }
         }
