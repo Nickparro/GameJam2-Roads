@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 12908f3ff9b331e4ea49beaaa663179e, type: 3}
-  m_Name: SubtitleData7
+  m_Name: SubtitleData 8 - 2
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: faaefcc64e817184c99566e9a8898fca, type: 3}
-  subtitleText: We haven't seen anyone around here in years, but there might be some
-    gasoline in the back. Take the key and try to open it from outside.
+  audioClip: {fileID: 8300000, guid: d15bd5631682de84693806bdcc90fa30, type: 3}
+  subtitleText: There's a reason why I haven't seen anyone for many years. Just let
+    me warn you, run.
