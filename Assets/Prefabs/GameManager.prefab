@@ -189,6 +189,8 @@ MonoBehaviour:
   playerWin: 0
   lateTriggers: {fileID: 0}
   earlyTriggers: {fileID: 0}
+  gasStationSignal: {fileID: 0}
+  leanguageSetter: {fileID: 0}
 --- !u!114 &285224058619671856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,6 +263,12 @@ PlayableDirector:
   - key: {fileID: -1715369998152660796, guid: c932117fbb595514eb00231f77ad78ce, type: 2}
     value: {fileID: 0}
   - key: {fileID: 7832790770585572037, guid: c932117fbb595514eb00231f77ad78ce, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -6840281701015171138, guid: c932117fbb595514eb00231f77ad78ce, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 1535692795756799854, guid: c932117fbb595514eb00231f77ad78ce, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -6846680782006680855, guid: c932117fbb595514eb00231f77ad78ce, type: 2}
     value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
