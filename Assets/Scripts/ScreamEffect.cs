@@ -5,7 +5,7 @@ public class ScreamEffect : MonoBehaviour
 {
     public Transform targetObject;
     public GameObject oldTarget;
-    private float rotationSpeed = 300f;
+    private float rotationSpeed = 400f;
     public bool scream = false;
     public AudioClip impact;
     int count = 0;
@@ -22,7 +22,7 @@ public class ScreamEffect : MonoBehaviour
             Vector3 targetDirection = targetObject.position - Camera.main.transform.position;
             targetRotation = Quaternion.LookRotation(targetDirection);
             Camera.main.transform.rotation = Quaternion.RotateTowards(Camera.main.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-            StartCoroutine(DeactivateScreamAfterDelay(3));
+            StartCoroutine(DeactivateScreamAfterDelay(2));
         }
     }
 

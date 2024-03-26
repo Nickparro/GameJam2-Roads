@@ -53,6 +53,10 @@ public class PlayerManager : MonoBehaviour
                     currentToolHit.GetComponent<Animator>().SetBool("IsOpen", true);
                     StartCoroutine(ApplyAnimations(2, currentToolHit.GetComponent<Animator>(), "IsOpen", false));
                 }
+                else if (currentToolHit.GetComponent<DoorController>() != null)
+                {
+                    currentToolHit.GetComponent<DoorController>().OpenDoor();
+                }
             }
         }
     }

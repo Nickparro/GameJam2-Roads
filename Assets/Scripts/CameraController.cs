@@ -6,11 +6,13 @@ public class CameraController : MonoBehaviour
     public Transform playerBody;
     private float xRotation = 0f;
     private Transform target;
+    private Quaternion originalRotation;
 
     void Start()
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+
     }
 
     void FixedUpdate()
@@ -20,6 +22,7 @@ public class CameraController : MonoBehaviour
             Vector3 targetDirection = target.position - transform.position;
             Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, mouseSensitivity * Time.deltaTime);
+            originalRotation = transform.rotation;
         }
         else
         {
@@ -27,12 +30,16 @@ public class CameraController : MonoBehaviour
             float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
             xRotation -= mouseY;
             xRotation = Mathf.Clamp(xRotation, -90f, 90f);
-            transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-            playerBody.Rotate(Vector3.up * mouseX);
+            transform.localRotation = Quaternion.Euler(xRotation, transform.localRotation.eulerAngles.y + mouseX, 0f);
         }
     }
+
     public void SetTarget(Transform newTarget)
     {
         target = newTarget;
+        if (target == null)
+        {
+            transform.rotation = originalRotation; 
+        }
     }
 }
