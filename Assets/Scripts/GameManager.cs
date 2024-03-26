@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public bool playerWin = false;
     public GameObject lateTriggers;
     public GameObject earlyTriggers;
+    public GameObject gasStationSignal;
     public LeanguageSetter leanguageSetter;
 
 
@@ -65,6 +66,7 @@ public class GameManager : MonoBehaviour
     public void LateGameStart()
     {
         rainParticles.SetActive(true);
+        gasStationSignal.SetActive(false);
         SoundManager.Instance.PlayRain();
         SoundManager.Instance.PlayMusic(lateGameSound);
     }

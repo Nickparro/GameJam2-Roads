@@ -143,10 +143,10 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-    public void TakeDamage()
+    /*public void TakeDamage()
     {
         GameManager.Instance.GameOver();
-    }
+    }*/
 
     public bool HasAllTheTools() {
         return acquiredTools.Count == NUMBER_OF_TOOLS;

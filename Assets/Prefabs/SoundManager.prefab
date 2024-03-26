@@ -41,7 +41,7 @@ AudioSource:
   m_GameObject: {fileID: 2107727408}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: f279cd316720acb4c9926f7ed1f2f70b, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -169,7 +169,7 @@ AudioSource:
   m_GameObject: {fileID: 1296978135472006906}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: f279cd316720acb4c9926f7ed1f2f70b, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 0.7
@@ -297,7 +297,7 @@ AudioSource:
   m_GameObject: {fileID: 6895546123780914164}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: f279cd316720acb4c9926f7ed1f2f70b, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -425,7 +425,7 @@ AudioSource:
   m_GameObject: {fileID: 6895546123972817476}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: f279cd316720acb4c9926f7ed1f2f70b, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -565,7 +565,7 @@ MonoBehaviour:
   effects: {fileID: 6895546123972817479}
   steps: {fileID: 2107727409}
   rain: {fileID: 2602449481009108556}
-  rainClip: {fileID: 0}
+  rainClip: {fileID: 8300000, guid: b23fe7984d990014cadc19354e683724, type: 3}
 --- !u!114 &1200085775
 MonoBehaviour:
   m_ObjectHideFlags: 0

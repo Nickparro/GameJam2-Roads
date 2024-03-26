@@ -16,7 +16,11 @@ public class EnemyController : MonoBehaviour
     public float actualSpeed;
     public Animator enemyAnim;
     [SerializeField] AudioClip stepGrass;
+    public AudioClip jumpscare;
+    public bool isDead=false;
     public float damageDistance = 5f;
+
+    [SerializeField] GameObject playerObj, camJumpscare;
     void Start()
     {
         aiNav.speed = minSpeed;
@@ -65,12 +69,30 @@ public class EnemyController : MonoBehaviour
     }
 
     void HurtPlayer()
-    {
-        float distanceToPlayer = Vector3.Distance(transform.position, playerPos.position);
+    {   
+        if(!isDead){
+            
+            float distanceToPlayer = Vector3.Distance(transform.position, playerPos.position);
         if (distanceToPlayer <= damageDistance)
         {
-            playerPos.GetComponent<PlayerManager>().TakeDamage();
+            isDead = true;
+            SoundManager.Instance.PlaySound(jumpscare, false);
+            StartCoroutine("GamePlayerOver");
+            playerObj.SetActive(false);
+            camJumpscare.SetActive(true);
+            enemyAnim.SetTrigger("jumpscare");
+            
         }
+
+        }
+        
+    }
+
+    IEnumerator GamePlayerOver()
+    {
+        yield return new WaitForSecondsRealtime(2f);
+        //playerPos.GetComponent<PlayerManager>().TakeDamage();
+        GameManager.Instance.GameOver();
     }
 
 }
