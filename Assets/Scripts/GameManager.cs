@@ -76,6 +76,7 @@ public class GameManager : MonoBehaviour
     public void ActivateEnemy()
     {
         enemyGO.SetActive(true);
+        DialogManager.instance.SetDialog();
     }
 
     public void PauseGame()

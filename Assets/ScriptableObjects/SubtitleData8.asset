@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12908f3ff9b331e4ea49beaaa663179e, type: 3}
   m_Name: SubtitleData8
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 5a8a17a0af19dc94aa4e5c3ffaa7fc91, type: 3}
-  subtitleText: "Starts to rain. Following the man's directions, I look for the gas
-    can behind the toilets. \r"
+  audioClip: {fileID: 8300000, guid: aacf07594898a714897be203fedc3872, type: 3}
+  subtitleText: Comienza a llover. Siguiendo las indicaciones del hombre busco el
+    bidon de gasolina en la parte trasera.
