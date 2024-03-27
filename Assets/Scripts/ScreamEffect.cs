@@ -5,6 +5,7 @@ public class ScreamEffect : MonoBehaviour
 {
     public Transform targetObject;
     public GameObject oldTarget;
+    public GameObject signalBack;
     private float rotationSpeed = 400f;
     public bool scream = false;
     public AudioClip impact;
@@ -17,6 +18,7 @@ public class ScreamEffect : MonoBehaviour
         if (targetObject != null && Camera.main != null)
         {
             oldTarget.SetActive(false);
+            signalBack.SetActive(true);
             targetObject.gameObject.SetActive(true);
             Camera.main.GetComponent<CameraController>().SetTarget(targetObject);
             Vector3 targetDirection = targetObject.position - Camera.main.transform.position;
