@@ -12,6 +12,8 @@ public class ObjectInteraction : MonoBehaviour
     public GameObject activateItem;
     public string textToShow = "Press K to Pickup";
     public bool isFinalState = false;
+    public bool isOneShotActivation = false;
+    public AudioClip audoToplayOnAnim;
 
     private void Awake() {
         tooltip.SetActive(false);
@@ -23,8 +25,12 @@ public class ObjectInteraction : MonoBehaviour
     }
 
     public void enableTooltipAndOutline(bool state) {
-        //gameObject.GetComponent<Outline>().enabled = state;
+        // gameObject.GetComponent<Outline>().enabled = state;
         tooltip.SetActive(state);
+    }
+
+    public void resetToolTip() {
+        tooltip.GetComponentInChildren<TextMeshProUGUI>().text = "";
     }
 
     public GameObject getTheTool() {

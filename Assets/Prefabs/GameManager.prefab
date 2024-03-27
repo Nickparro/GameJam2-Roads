@@ -214,6 +214,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 641dc9d5b41d427459fdba8c05fa701d, type: 2}
   - {fileID: 11400000, guid: 16da1529b7a5cba4abfd3fff987e39c0, type: 2}
   - {fileID: 11400000, guid: b89704a36db525a4db50bce0bd99950d, type: 2}
+  - {fileID: 11400000, guid: ec2130c5e40e922428347c2ed7db5d9f, type: 2}
   - {fileID: 11400000, guid: d058247d031f43641add012c2e73e501, type: 2}
   - {fileID: 11400000, guid: 3265e1c15308a0f4a9637a3077f48583, type: 2}
   - {fileID: 11400000, guid: eff36ae7b0646e147862454eb550690e, type: 2}
@@ -224,7 +225,7 @@ PlayableDirector:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 285224058619671857}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: c932117fbb595514eb00231f77ad78ce, type: 2}
   m_InitialState: 1
