@@ -17,6 +17,7 @@ public class PlayerManager : MonoBehaviour
     bool isInPanic = false;
     ScreamEffect screamer;
     public EnemyController enemyController;
+    public AudioClip heartBeat;
     private void Awake()
     {
         if (instance == null)
@@ -115,8 +116,9 @@ public class PlayerManager : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             PanicEffect();
+            SoundManager.Instance.PlayHeartBeat(heartBeat);
         }
-        if (other.CompareTag("DialogTrigger") && !hasDetectedColision)
+        else if (other.CompareTag("DialogTrigger") && !hasDetectedColision)
         {
             DialogManager.instance.SetDialog();
             hasDetectedColision = true;
@@ -133,6 +135,7 @@ public class PlayerManager : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             RemovePanicEffect();
+            SoundManager.Instance.StopHeartBeat(heartBeat);
         }
         if (other.CompareTag("DialogTrigger") && hasDetectedColision)
         {

@@ -5,7 +5,7 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance;
-    public AudioSource music, effects, steps, rain;
+    public AudioSource music, effects, steps, rain, heart;
     public AudioClip rainClip;
     private void Awake()
     {
@@ -31,6 +31,17 @@ public class SoundManager : MonoBehaviour
             effects.loop = true;
             effects.Play();
         }
+    }
+
+    public void PlayHeartBeat(AudioClip clip)
+    {
+        heart.clip = clip;
+        heart.loop = true;
+        heart.Play();
+    }
+     public void StopHeartBeat(AudioClip clip)
+    {
+        heart.Stop();
     }
     public void PlayMusic(AudioClip clip)
     {

@@ -19,6 +19,7 @@ TagManager:
   - Zone3
   - Enemy
   - Gas
+  - Screamer
   layers:
   - Default
   - TransparentFX
