@@ -21,7 +21,8 @@ public class ObjectInteraction : MonoBehaviour
     }
 
     private void LateUpdate() {
-        tooltip.transform.LookAt(tooltip.transform.position + Camera.main.transform.rotation * Vector3.forward, Camera.main.transform.rotation * Vector3.up);
+        if (tooltip != null)
+            tooltip.transform.LookAt(tooltip.transform.position + Camera.main.transform.rotation * Vector3.forward, Camera.main.transform.rotation * Vector3.up);
     }
 
     public void enableTooltipAndOutline(bool state) {
