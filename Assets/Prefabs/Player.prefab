@@ -442,6 +442,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyController: {fileID: 0}
+  heartBeat: {fileID: 8300000, guid: 24ce7928c501e004b817e89f46db9ef1, type: 3}
 --- !u!114 &1937430744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -456,6 +457,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetObject: {fileID: 0}
   oldTarget: {fileID: 0}
+  signalBack: {fileID: 0}
   scream: 0
   impact: {fileID: 8300000, guid: c6192acbfc4e50140999e45bd2b385cd, type: 3}
 --- !u!95 &2020582451
@@ -657,14 +659,14 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 250438655764758083}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 10
-  m_SpotAngle: 30
+  m_SpotAngle: 30.47
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
