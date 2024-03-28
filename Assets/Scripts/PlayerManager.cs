@@ -51,7 +51,7 @@ public class PlayerManager : MonoBehaviour
                     currentToolHit.GetComponent<ObjectInteraction>().resetToolTip();
                 } else {
                     TextMeshProUGUI goalText = GameObject.Find("GoalText").GetComponent<TextMeshProUGUI>();
-                    goalText.text = "Back to car to put on gas"; 
+                    goalText.text = LanguageManager.instance.GetText("back_to_car"); 
                     GameManager.Instance.ActivateEnemy();
                     screamer.scream = true;
                     Destroy(currentToolHit);

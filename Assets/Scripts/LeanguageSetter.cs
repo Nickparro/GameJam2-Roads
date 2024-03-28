@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class LeanguageSetter : MonoBehaviour
 {
@@ -33,6 +34,7 @@ public class LeanguageSetter : MonoBehaviour
     public SubtitleData subtitle6;
     public SubtitleData subtitle7;
     public SubtitleData subtitle8;
+    public SubtitleData subtitle82;
     public SubtitleData subtitle9;
     public SubtitleData subtitle10;
 
@@ -40,6 +42,20 @@ public class LeanguageSetter : MonoBehaviour
     public TextMeshProUGUI door;
     public TextMeshProUGUI pickup;
     public TextMeshProUGUI car;
+
+    public TextMeshProUGUI pauseTitle;
+    public TextMeshProUGUI resume;
+    public TextMeshProUGUI options;
+
+    public TextMeshProUGUI back;
+    public TextMeshProUGUI optionsTitle;
+    public TextMeshProUGUI resolution;
+    public TextMeshProUGUI graphics;
+    public TextMeshProUGUI sensitivity;
+    public TextMeshProUGUI volume;
+    public TextMeshProUGUI fullscreen;
+    public TextMeshProUGUI storemanTalkWith;
+    public TextMeshProUGUI useKey;
 
     public void UpdateTextMenu()
     {
@@ -72,6 +88,7 @@ public class LeanguageSetter : MonoBehaviour
         subtitle8.subtitleText = LanguageManager.instance.GetText("text09");
         subtitle9.subtitleText = LanguageManager.instance.GetText("text10");
         subtitle10.subtitleText = LanguageManager.instance.GetText("text11");
+        subtitle82.subtitleText = LanguageManager.instance.GetText("text12");
 
         task.text = LanguageManager.instance.GetText("look_for_gas_station");
         door.text = LanguageManager.instance.GetText("press_e_to_open");
@@ -82,5 +99,21 @@ public class LeanguageSetter : MonoBehaviour
         restart2.text = LanguageManager.instance.GetText("play_again");
         menu2.text = LanguageManager.instance.GetText("return_to_menu");
 
+        pauseTitle.text = LanguageManager.instance.GetText("pause");
+        resume.text = LanguageManager.instance.GetText("resume");
+        options.text = LanguageManager.instance.GetText("options");
+
+        back.text = LanguageManager.instance.GetText("back");
+        optionsTitle.text = LanguageManager.instance.GetText("options");
+        resolution.text = LanguageManager.instance.GetText("resolution");
+        graphics.text = LanguageManager.instance.GetText("quality");
+        sensitivity.text = LanguageManager.instance.GetText("sensitivity");
+        volume.text = LanguageManager.instance.GetText("volume");
+        fullscreen.text = LanguageManager.instance.GetText("fullscreen");
+
+        storemanTalkWith.text = LanguageManager.instance.GetText("press_e_to_talk");
+        useKey.text = LanguageManager.instance.GetText("press_e_to_use_key");
+        // tendero
+        // press e to use key o
     }
 }

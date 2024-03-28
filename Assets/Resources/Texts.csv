@@ -5,6 +5,7 @@ exit,Exit,Salir
 warning,Warning,Advertencia
 resume,Resume,Reanudar
 look_for_gas_station,Look for a gas station,Busca una gasolinera
+back_to_car, Back to car to put on gas, Vuelve al carro para tanquear
 warningText, This game contains moderate jump scares and is not recommended to people that are scared easily, Este juego contiene sustos moderados y no se recomienda para personas que se asustan fácilmente
 text02,The trees rise imposingly around me their twisted branches intertwining to form a dark roof that barely lets the moonlight through. Each step I take seems to plunge me deeper into the thick forest and the sound of my footsteps is lost in the disturbing silence that envelops everything. The rain falls incessantly creating a constant murmur that mingles with the whispering of the wind through the trees.,Los árboles se elevan imponentemente a mi alrededor sus ramas retorcidas se entrelazan para formar un techo oscuro que apenas deja pasar la luz de la luna. Cada paso que doy parece sumergirme más profundamente en el espeso bosque y el sonido de mis pasos se pierde en el perturbador silencio que lo envuelve todo. La lluvia cae incesantemente creando un murmullo constante que se mezcla con el susurro del viento entre los árboles.
 text03,My senses are on high alert every creak of a broken branch beneath my feet or the rustle of a nocturnal animal sends a shiver down my spine. Sometimes the shadows seem to come alive dancing among the trees as if they were entities of their own playing with my mind and sowing doubt about what is real and what is not.,Mis sentidos están en alerta máxima cada crujido de una rama rota bajo mis pies o el susurro de un animal nocturno me envía un escalofrío por la espalda. A veces las sombras parecen cobrar vida bailando entre los árboles como si fueran entidades propias jugando con mi mente y sembrando dudas sobre lo que es real y lo que no lo es.
@@ -17,17 +18,19 @@ text09,The sound of something stalking me haunts me as I run through the woods. 
 text10,With my heart pounding I race back to my car. The sound of my own footsteps mingles with those of my invisible pursuer - will I make it safely?,Con el corazón latiendo con fuerza corro de vuelta a mi coche. El sonido de mis propios pasos se mezcla con los de mi perseguidor invisible; ¿llegaré a salvo?
 text11,Finally I reach my car and realize the terrifying truth: there never was a sign my tank is still full and I'm all alone on this deserted road. What did I really find in that dark road?,Finalmente llego a mi coche y me doy cuenta de la aterradora verdad: nunca hubo un letrero mi tanque todavía está lleno y estoy completamente solo en esta carretera desierta. ¿Qué encontré realmente en esa oscura carretera?
 text12,There's a reason why I haven't seen anyone for many years. Just let me warn you. run.,Hay una razón por la cual no veo a nadie hace muchos años. solo déjame advertirte. corre.
-dead,Who was it?,¿Que fue eso?
+dead,Who was it?,¿Qué fue eso?
 play_again,Play again,Jugar de nuevo
 return_to_menu,Return to menu,Volver al menú
 thanks_for_playing,Thanks for playing!,¡Gracias por jugar!
 return_to_car,Return to the car,Vuelve al coche
 press_e_to_pickup,Press E to pickup,Pulsa E para recoger
 press_e_to_open,Press E to open,Pulsa E para abrir
+press_e_to_talk, Press E to talk, Pulsa E para hablar
+press_e_to_use_key, Press E to use key, Pulsa E para usar llave
 sensitivity,Sensitivity,Sensibilidad
 volume,Volume,Volumen
 resolution,Resolution,Resolución
-quality,Quality,Calidad
+quality,Graphics,Gráficos
 fullscreen,Fullscreen,Pantalla completa
 
 subs1,I've been driving for hours,He estado conduciendo durante horas.
@@ -38,4 +41,6 @@ subs5,Suddenly in the distance I spot a sign faintly flashing in the darkness.,D
 subs6,'Service Station 1 kilometer away','Gasolinera a 1 kilómetro de distancia'
 subs7,With renewed hope I head into the dark forest.,Con esperanza renovada me adentro en el oscuro bosque.
 
+pause, Pause, Pausa
 
+back, Back, Volver
